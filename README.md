@@ -1,7 +1,11 @@
 
 
-# Prediction of MCC
-Identification of open and closed mesoscale convective clouds (MCC) with two differently trained models (with automatic and manual data augmentation) based on a convolutional neural network (CNN). For further details on the setup of the CNN see the description in the Master Thesis (*Master_Thesis.pdf*).
+# How to create a new model?
+
+# Configurations
+
+# How to avoid Overfitting
+
 
 # Technical Requirements
 Python (version 3.7) is required to use the models. Furthermore the installation of the following packages is necessary:
