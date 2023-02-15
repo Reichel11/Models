@@ -31,6 +31,19 @@ What are the least configurations that should be given?
 - The Adam optimizer as well as the categorical_crossentropy loss function should be set.
 - the loss function applies to three or more categories. If there are only two categories, the line should be changed to loss = "binary_crossentropy".
 
+What can be added and changed?
+
+- Which variables can be changed as needed?
+      - batch_size, epochs, learning_rate, validation_split, filter and kernel size.
+      - Recommended values: batch_size = 20; epochs = 50; learning_rate = 0.001; validation_split = 0.3; filterize = 128 ,64 or 32; kernelsize= 3,3
+
+- What additional layers can be added?
+      - Additional Convolutional layer (with "relu" activation function and maxpooling layer)
+      - Additional Dense layer with "relu" activation function
+      - Dropout layer (after Maxpooling layer or Dense layer), but not after the last Dense layer
+      - Batch_normalization layer
+      - L2 regularizer (kernel and bias regularizer)
+      - Recommended values: convolution layer (filter size = 128,64,32, kernel size = 3,3); density layer (64 or other value, but from a higher to a lower value); dropout (0.3-0.5); L2 regularizer (0.01).    
 
 1. What to do to create a new model?
   - training data (one array with the data itself and one array for the categories)
