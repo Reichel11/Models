@@ -34,10 +34,12 @@ What are the least configurations that should be given?
 What can be added and changed?
 
 - Which variables can be changed as needed?
+- 
       - batch_size, epochs, learning_rate, validation_split, filter and kernel size.
       - Recommended values: batch_size = 20; epochs = 50; learning_rate = 0.001; validation_split = 0.3; filterize = 128 ,64 or 32; kernelsize= 3,3
 
 - What additional layers can be added?
+- 
       - Additional Convolutional layer (with "relu" activation function and maxpooling layer)
       - Additional Dense layer with "relu" activation function
       - Dropout layer (after Maxpooling layer or Dense layer), but not after the last Dense layer
