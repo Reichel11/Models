@@ -10,6 +10,8 @@ To create and train a new model, the model configurations of model_group.py can 
 
 Recommendation: For the beginning you should work with the original dataset and the augmentation layer configuration, because it is very simple and does not need so much computing power and still could achieve an equivalent result. (see Master_Thesis.pdf)
 
+What are the actual models able to predict?
+
 - The models can predict open and closed MCC with high accuracy.
 - The models are trained to additionally detect scenes that do not meet the criteria of open and closed low-level scenes (noMCC).
 - However, the accuracy in the noMCC case is lower and the models are therefore not capable of predicting noMCC scenes, but the noMCC classification is used as not open or closed MCC classification.
