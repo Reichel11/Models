@@ -24,6 +24,14 @@ Both models have similar precision, recall, and F1-score. Thus, both models can 
 
 # Configurations
 
+What are the least configurations that should be given?
+
+- There should be at least one convolutional layer with relu activation function and maxpooling layer.
+- There should be a flattening layer followed by at least one dense layer with softmax activation function. (size of last dense layer should equals the number of categories)
+- The Adam optimizer as well as the categorical_crossentropy loss function should be set.
+- the loss function applies to three or more categories. If there are only two categories, the line should be changed to loss = "binary_crossentropy".
+
+
 1. What to do to create a new model?
   - training data (one array with the data itself and one array for the categories)
   - configure training data (fillvalue,...
