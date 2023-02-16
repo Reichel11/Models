@@ -71,6 +71,8 @@ to prevent this.
 ### Overfitting and Underfitting 
 <img src="overfit.PNG" width="800">
 
+### Regularization methods 
+
 
 # Improvement Ideas
 
