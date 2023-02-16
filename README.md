@@ -53,10 +53,20 @@ What can be added and changed?
   - set model configurations
 
 
-# Model settings
-1. What to change and what do they do?
- - Filter/Kernel size, activation function, Dense-layer, learning-rate, loss function,optimizer
+
 # How to avoid Overfitting
+
+In a neural network, problems can occur that include underfitting and overfitting.
+The figure below shows the loss function of the training and validation dataset to illustrate
+what is the meaning of underfitting and overfitting. The dashed blue line represents
+the desired point at which the loss has found its minimum. To the left of this point is
+the area of underfitting, where the loss tries to minimize itself. Accordingly, the model
+has not yet been trained with enough data or has not had enough time to train and
+has not yet reached the desired point. The overfitting area is on the opposite side. The
+model has learned the features of the training set too well and is therefore less able
+to assign the features of the validation set (IBM, 2021; Bishop, 2016). Therefore, it is
+important to avoid overfitting and in the following are a few regularizatrion methods
+to prevent this.
 
 1. What is overfitting?
 2. What to use against overfitting?
