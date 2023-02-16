@@ -68,8 +68,8 @@ to assign the features of the validation set (IBM, 2021; Bishop, 2016). Therefor
 important to avoid overfitting and in the following are a few regularizatrion methods
 to prevent this.
 
-### Statistics of Models 
-<img src="overfit.png" width="800">
+### Overfitting and Underfitting 
+<img src="overfit.PNG" width="800">
 
 
 # Improvement Ideas
