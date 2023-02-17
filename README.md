@@ -73,7 +73,29 @@ to prevent this.
 
 ### Regularization methods 
 
-test
+In the following are some regularization methods I used explained. For more details, see Master_Thesis.pdf
+
+1) Dropout
+
+- used to ignore random correlations between the data
+- it removes certain values from the network
+
+2) L2 regularizer
+
+- calibrate machine learning models in order to minimize the adjusted loss function
+- shrinks weights to small values
+- well suited for overfitting
+
+3) Batch normalization
+
+- normalizes the contributions to a layer for every mini-batch
+- decreasing the number of training epochs
+- makes the model more stable
+
+4) Data augmentation
+
+- increasing the number of the actual dataset by making small changes to the images (such as roating, zooming, cropping)
+- more data improves the model and therefore less overfitting
 
 # Improvement Ideas
 
