@@ -99,6 +99,12 @@ In the following are some regularization methods I used explained. For more deta
 
 # Improvement Ideas
 
+A closer examination of the no MCC scenes revealed that some of the images classified into no MCC had features
+of open or closed cell structures, which is a possible explanation for the difficulty of the models to classify them correctly.
+To avoid this, it would be possible in future work to reclassify the no MCC dataset to remove all scenes with obvious open and closed MCC cloud structures. Furthermore, it would also be possible to generate smaller scenes from the existing images that are still large enough to recognize the necessary structures, but small enough so that there are no different structures in one image. A different approach could be to introduce additional categories for scenes with features of more than one type of MCC clouds.
+
+For future work with the actual dataset, it is therefore highly recommended to first address the problem of the incorrect noMCC assignment. Only then should different model configurations be tried out.
+
 # Technical Requirements
 Python (version 3.7) is required to use the models. Furthermore the installation of the following packages is necessary:
 - Tensorflow – 2.7.0
