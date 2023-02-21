@@ -40,18 +40,12 @@ What can be added and changed?
 
 - What additional layers can be added?
 
-     - Additional Convolutional layer (with "relu" activation function and maxpooling layer)
-     - Additional Dense layer with "relu" activation function
-      - Dropout layer (after Maxpooling layer or Dense layer), but not after the last Dense layer
-      - Batch_normalization layer
-      - L2 regularizer (kernel and bias regularizer)
-      - Recommended values: convolution layer (filter size = 128,64,32, kernel size = 3,3); density layer (64 or other value, but from a higher to a lower value);           dropout (0.3-0.5); L2 regularizer (0.01).    
-
-1. What to do to create a new model?
-  - training data (one array with the data itself and one array for the categories)
-  - configure training data (fillvalue,...
-  - set model configurations
-
+     - Additional convolutional layer (with relu activation function and maxpooling layer)
+     - Additional dense layer with relu activation function
+     - Dropout layer (after maxpooling layer or mense layer), but not after the last dense layer
+     - Batch_normalization layer
+     - L2_regularizer (kernel and bias regularizer)
+     - Recommended values: convolution layer (filter size = 128,64,32, kernel size = 3,3); dense layer (64 or other value, but from a higher to a lower value);           dropout (0.3-0.5); L2_regularizer (0.01).    
 
 
 # How to avoid Overfitting
