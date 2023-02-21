@@ -6,7 +6,7 @@
 
 How to create a new model?
 
-To create and train a new model, the model configurations of model_group.py can be used, adjusted and executed. There you can find the model configuration for the original dataset with an augmentation layer as well as the configuration with an already augmented dataset. These configurations worked best for the respective dataset. 
+To create and train a new model, the model configurations of model_group.py can be used, adjusted and executed. There you can find the model configuration for the original dataset with an augmentation layer as well as the configuration with an already augmented dataset. These configurations worked best for the respective dataset, but can also be used for other dataset.
 
 Recommendation: For the beginning you should work with the original dataset and the augmentation layer configuration, because it is very simple and does not need so much computing power and still could achieve an equivalent result. (see Master_Thesis.pdf)
 
