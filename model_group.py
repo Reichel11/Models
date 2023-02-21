@@ -1,16 +1,22 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Aug 25 20:20:13 2021
+
 Script for two different model configurations, which can be
-trained with automatic and manuel data augmentation.
-The scenes need to be enter as an array in x_train of size
-(number of scene, 224,2 24, 1). If the scenes are already
-augmented and ready for the training,
+trained with automatic (augmentation layer) and 
+manuel data augmentation (data which is already augmented).
+The scenes need to can be entered for example as an array in x_train of size
+(number of scene, 224,224, 1). The number of pixels can be varied also.
+In this case the test data should have the same size as the training data!
+If the scenes are already augmented and ready for the training,
 AUGMENTATION_GIVEN = 1, otherwise use AUGMENTATION_GIVEN = 0.
 
+Both model configurations can be used for any data.
+For this work were these two configuration used,
+because they showed the best results for the respective dataset.
 
 
-@author: chris
+@author: Christopher Reichel
 """
 # %%
 import os
@@ -42,7 +48,6 @@ Augmentation_GIVEN = 1
 # %% Define constant variables
 # Open = 0, Closed = 1, NoMCC = 2
 CATEGORIES = ['Open', 'Closed', 'NoMCC']
-DPI = 600
 FIG_FOR = 'png'
 
 # %% load input data
@@ -177,10 +182,9 @@ if Augmentation_GIVEN == 1:
     model.compile(loss='categorical_crossentropy',
                   optimizer=opt,
                   metrics=['accuracy'])
-
-    filepath = Path("/work/bb1137/reichel/data/dataaug/results")
-    filename = Path("32_3x3_64_3x3_dr0.3_dense64_dr0.5_l20.01_bn_dense32_lr0.001_bs20_epochs50")
-    file_hdf5 = Path(".hdf5")
+    
+    filepath = Path(DATAPATH_SAVE)
+    filename = Path(FILENAME)
     file = Path(filepath/(str(filename) + ".hdf5"))
 
     print("bye")
@@ -195,11 +199,11 @@ if Augmentation_GIVEN == 1:
 
 # %% model fit
 
-# fit the model
-history = model.fit(X, y, batch_size=20, epochs=50, validation_split=0.3, callbacks=callbacks)
+# start training the model
+history = model.fit(X, y, batch_size=20, epochs=2, validation_split=0.3, callbacks=callbacks)
 
 
-# %% set history and plot Paths and save the history
+# %% set history and plot Paths and save the history of the model
 
 # set full file path for save the history (accuracy and loss data)
 file_history_full = Path(filepath/(str(filename) + ".npy"))
