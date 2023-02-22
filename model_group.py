@@ -142,7 +142,7 @@ if Augmentation_GIVEN == 0:
                                  mode="max")
 
     callbacks = [checkpoint]
-    print("hi")
+    
 
 
 #%% Model configurations for already augmented dataset
@@ -187,7 +187,7 @@ if Augmentation_GIVEN == 1:
     filename = Path(FILENAME)
     file = Path(filepath/(str(filename) + ".hdf5"))
 
-    print("bye")
+  
 
     checkpoint = ModelCheckpoint(filepath=file,
                                  monitor="val_accuracy",
