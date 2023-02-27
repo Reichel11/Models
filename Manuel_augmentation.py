@@ -2,7 +2,7 @@
 """
 Created on Mon Feb 27 13:31:21 2023
 
-@author: chris
+@author: Christopher Reichel
 """
 
 import os
