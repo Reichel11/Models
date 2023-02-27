@@ -17,6 +17,13 @@ Recommendation: For the beginning you should work with the original dataset and 
 
 Both models have similar precision, recall, and F1-score. Thus, both models can be used to predict open and closed MCC with an overall accuracy of 80.6%. While the Model1 with the automatic data augmentation has a higher precision in open MCC, the Model2 with the manual data augmentation has a higher recall of open MCC. This means that while the Model1 has predicted fewer open MCC correctly as open MCC, it has categorized also fewer other categories as open MCC, leading to a higher precision of open MCC with a lower recall (see also Fig. 4.7 in *Master_Thesis.pdf*). In contrast, Model2 has predicted a higher number of open MCC correctly as open, but also more noMCC cases are predicted as open MCC, leading to a lower precision and a higher recall of open MCC (see also Fig. 4.7 in *Master_Thesis.pdf*). However, most noMCC scenes, that are identified as open, could also by eye be identified as open, but might not match the 70% criteria of the visual inspection (see Fig. 4.9 in *Master_Thesis.pdf*). Therefore, we trust both models to predict open and closed MCC with high accuracy, in case the precision of open and closed MCC is particularly important we recommend using the Model1. A more detailed description about the prediction of the models can be seen in the repository "Reichel11/Prediction".
       
+# Needed fix
+To train the model with the *model.fit* function, we used the argument *validation_split* see code line below. However, this argument only takes the last, in our case, 30% of the data without regard of the category, leading to an unequal amount of categories in the training and validation data set.
+
+```
+history = model.fit(X, y, batch_size=20, epochs=2, validation_split=0.3, callbacks=callbacks)
+```
+Thus, to fix this issue, the validation data for *x_val* and *y_val* should be generated separately and given to the model.fit function by the argument  *validation_data=(x_val, y_val)*. 
 
 # Configurations
 
@@ -26,6 +33,7 @@ Both models have similar precision, recall, and F1-score. Thus, both models can 
 - There should be a flattening layer followed by at least one dense layer with softmax activation function. (size of last dense layer should equals the number of categories)
 - The Adam optimizer as well as the categorical_crossentropy loss function should be set.
 - the loss function applies to three or more categories. If there are only two categories, the line should be changed to loss = "binary_crossentropy".
+
 
 ## What can be added and changed?
 
