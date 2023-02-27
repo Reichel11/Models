@@ -2,15 +2,11 @@
 
 # How to create a new model?
 
-# Description
-
-How to create a new model?
-
-To create and train a new model, the model configurations of model_group.py can be used, adjusted and executed. There you can find the model configuration for the original dataset with an augmentation layer as well as the configuration with an already augmented dataset. These configurations worked best for the respective dataset, but can also be used for other dataset.
+To create and train a new model, the model configurations of *model_group.py* can be used, adjusted, and executed. There, the model configuration for the original dataset with an augmentation layer and the configuration with an already augmented dataset can be changed. These configurations worked best for the respective dataset, but can also be used for other dataset.
 
 Recommendation: For the beginning you should work with the original dataset and the augmentation layer configuration, because it is very simple and does not need so much computing power and still could achieve an equivalent result. (see Master_Thesis.pdf)
 
-What are the actual models able to predict?
+## What are the actual models able to predict?
 
 - The models can predict open and closed MCC with high accuracy.
 - The models are trained to additionally detect scenes that do not meet the criteria of open and closed low-level scenes (noMCC).
@@ -24,21 +20,21 @@ Both models have similar precision, recall, and F1-score. Thus, both models can 
 
 # Configurations
 
-What are the least configurations that should be given?
+## What are the least configurations that should be given?
 
 - There should be at least one convolutional layer with relu activation function and maxpooling layer.
 - There should be a flattening layer followed by at least one dense layer with softmax activation function. (size of last dense layer should equals the number of categories)
 - The Adam optimizer as well as the categorical_crossentropy loss function should be set.
 - the loss function applies to three or more categories. If there are only two categories, the line should be changed to loss = "binary_crossentropy".
 
-What can be added and changed?
+## What can be added and changed?
 
-- Which variables can be changed as needed?
+- ### Which variables can be changed as needed?
 
      - batch_size, epochs, learning_rate, validation_split, filter and kernel size.
      - Recommended values: batch_size = 20; epochs = 50; learning_rate = 0.001; validation_split = 0.3; filterize = 128 ,64 or 32; kernelsize= 3,3
 
-- What additional layers can be added?
+- ### What additional layers can be added?
 
      - Additional convolutional layer (with relu activation function and maxpooling layer)
      - Additional dense layer with relu activation function
@@ -50,17 +46,8 @@ What can be added and changed?
 
 # How to avoid Overfitting
 
-In a neural network, problems can occur that include underfitting and overfitting.
-The figure below shows the loss function of the training and validation dataset to illustrate
-what is the meaning of underfitting and overfitting. The dashed blue line represents
-the desired point at which the loss has found its minimum. To the left of this point is
-the area of underfitting, where the loss tries to minimize itself. Accordingly, the model
-has not yet been trained with enough data or has not had enough time to train and
-has not yet reached the desired point. The overfitting area is on the opposite side. The
-model has learned the features of the training set too well and is therefore less able
-to assign the features of the validation set (IBM, 2021; Bishop, 2016). Therefore, it is
-important to avoid overfitting and in the following are a few regularizatrion methods
-to prevent this.
+In a neural network, problems can occur that include underfitting and overfitting. The figure below shows the loss function of the training and validation dataset to illustrate what is the meaning of underfitting and overfitting. The dashed blue line represents the desired point at which the loss has found its minimum. To the left of this point is the area of underfitting, where the loss tries to minimize itself. Accordingly, the model
+has not yet been trained with enough data or has not had enough time to train and has not yet reached the desired point. The overfitting area is on the opposite side. The model has learned the features of the training set too well and is therefore less able to assign the features of the validation set (IBM, 2021; Bishop, 2016). Therefore, it is important to avoid overfitting and in the following are a few regularizatrion methods to prevent this.
 
 ### Overfitting and Underfitting 
 <img src="overfit.PNG" width="800">
@@ -93,9 +80,7 @@ In the following are some regularization methods I used explained. For more deta
 
 # Improvement Ideas
 
-A closer examination of the no MCC scenes revealed that some of the images classified into no MCC had features
-of open or closed cell structures, which is a possible explanation for the difficulty of the models to classify them correctly.
-To avoid this, it would be possible in future work to reclassify the no MCC dataset to remove all scenes with obvious open and closed MCC cloud structures. Furthermore, it would also be possible to generate smaller scenes from the existing images that are still large enough to recognize the necessary structures, but small enough so that there are no different structures in one image. A different approach could be to introduce additional categories for scenes with features of more than one type of MCC clouds.
+A closer examination of the noMCC scenes revealed that some of the images classified into noMCC had features of open or closed cell structures, which is a possible explanation for the difficulty of the models to classify them correctly. To avoid this, it would be possible in future work to reclassify the noMCC dataset to remove all scenes with obvious open and closed MCC cloud structures. Furthermore, it would also be possible to generate smaller scenes from the existing images that are still large enough to recognize the necessary structures, but small enough so that there are no different structures in one image. A different approach could be to introduce additional categories for scenes with features of more than one type of MCC clouds.
 
 For future work with the actual dataset, it is therefore highly recommended to first address the problem of the incorrect noMCC assignment. Only then should different model configurations be tried out.
 
